@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Fundamentals_PS
 {
-    class Book
+    public class Book
     {
         public Book(string name)
         {
@@ -17,22 +17,24 @@ namespace Fundamentals_PS
             
         }
 
-        public void ShowStatistics()
+        public Statistics GetStatistics()
         {
-            var highGrade = double.MinValue;
-            var lowGrade = double.MaxValue;
-            var result = 0.0;
+            var result = new Statistics();
+            result.High = double.MinValue;
+            result.Low = double.MaxValue;
+            result.Average = 0.0;
+            
 
-            foreach (var number in grades)
+
+            foreach (var grade in grades)
             {
-                highGrade = Math.Max(number, highGrade);
-                lowGrade = Math.Min(number, lowGrade);
-                result += number;
+                result.High = Math.Max(grade, result.High);
+                result.Low = Math.Min(grade, result.Low);
+                result.Average += grade;
             }
-            result /= grades.Count;
-            Console.WriteLine($"The highest grade is {highGrade:N1}");
-            Console.WriteLine($"The lowest grade is {lowGrade:N1}");
-            Console.WriteLine($"The average grade is {result:N1}");
+            result.Average /= grades.Count;
+
+            return result;
         }
 
         static private List<double> grades;
