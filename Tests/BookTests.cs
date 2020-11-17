@@ -6,19 +6,16 @@ namespace Fundamentals_PS.Tests
     public class BookTests
     {
         [Fact]
-        public void Test1()
+        public void BookCalculatesAnAverageGrade()
         {
             // arrange
-            var book = new Book("");
+            var book = new Book("scores");
             book.AddGrade(89.1);
             book.AddGrade(90.5);
             book.AddGrade(77.3);
-            //var x = 5;
-            //var y = 2;
 
             // act
             var result = book.GetStatistics();
-            //var result = x + y;
 
             // assert
             Assert.Equal(85.6, result.Average, 1);

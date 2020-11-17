@@ -8,7 +8,7 @@ namespace Fundamentals_PS
         public Book(string name)
         {
             grades = new List<double>();
-            this.name = name;
+            Name = name;
         }
 
         public void AddGrade(double grade)
@@ -25,7 +25,6 @@ namespace Fundamentals_PS
             result.Average = 0.0;
             
 
-
             foreach (var grade in grades)
             {
                 result.High = Math.Max(grade, result.High);
@@ -38,6 +37,6 @@ namespace Fundamentals_PS
         }
 
         static private List<double> grades;
-        private string name;
+        public string Name;
     }
 }
