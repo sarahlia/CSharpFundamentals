@@ -6,6 +6,25 @@ namespace Fundamentals_PS.Tests
     public class TypeTests
     {
         [Fact]
+        public void ValueTypesAlsoPassByValue()
+        {
+            var x = GetInt();
+            SetInt(ref x);
+
+            Assert.Equal(42, x);
+        }
+
+        private void SetInt(ref int z)
+        {
+            z = 42;
+        }
+
+        private int GetInt()
+        {
+            return 3;
+        }
+
+        [Fact]
         public void CSharpCanPassByReference()
         {
             var book1 = GetBook("Book 1");
@@ -17,6 +36,21 @@ namespace Fundamentals_PS.Tests
         private void GetBookSetName(ref Book book, string name)
         {
             book = new Book(name);
+        }
+
+        [Fact]
+        public void StringsBehaveLikeValueTypes()
+        {
+            string name = "Sarah";
+            var upper = MakeUppercase(name);
+
+            Assert.Equal("Sarah", name);
+            Assert.Equal("SARAH", upper);
+        }
+
+        private string MakeUppercase(string parameter)
+        {
+            return parameter.ToUpper();
         }
 
         [Fact]

@@ -5,8 +5,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fundamentals-PS", "Fundamen
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{57EA0719-D1E6-40D8-BDB7-99248B927DB7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GradeBook", "GradeBook\GradeBook.csproj", "{929862A0-9D9E-41D7-BE3D-D6E6855C86C8}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,9 +19,5 @@ Global
 		{57EA0719-D1E6-40D8-BDB7-99248B927DB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57EA0719-D1E6-40D8-BDB7-99248B927DB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57EA0719-D1E6-40D8-BDB7-99248B927DB7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{929862A0-9D9E-41D7-BE3D-D6E6855C86C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{929862A0-9D9E-41D7-BE3D-D6E6855C86C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{929862A0-9D9E-41D7-BE3D-D6E6855C86C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{929862A0-9D9E-41D7-BE3D-D6E6855C86C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
