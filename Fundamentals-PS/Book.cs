@@ -13,7 +13,14 @@ namespace Fundamentals_PS
 
         public void AddGrade(double grade)
         {
-            grades.Add(grade);
+            if(grade <= 100 && grade >= 0)
+            {
+                grades.Add(grade);   
+            }
+            else
+            {
+                Console.WriteLine("Invalid Value");
+            }
             
         }
 
@@ -22,16 +29,16 @@ namespace Fundamentals_PS
             var result = new Statistics();
             result.High = double.MinValue;
             result.Low = double.MaxValue;
+            result.Total = 0.0;
             result.Average = 0.0;
-            
 
             foreach (var grade in grades)
             {
                 result.High = Math.Max(grade, result.High);
                 result.Low = Math.Min(grade, result.Low);
-                result.Average += grade;
+                result.Total += grade;
+                result.Average = result.Total / grades.Count;
             }
-            result.Average /= grades.Count;
 
             return result;
         }
