@@ -41,7 +41,7 @@ namespace Fundamentals_PS
             }
             else
             {
-                Console.WriteLine("Invalid Value");
+                throw new ArgumentException($"Invalid {nameof(grade)}");
             }
             
         }
