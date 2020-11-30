@@ -19,6 +19,8 @@ namespace Fundamentals_PS
             Console.WriteLine($"The lowest grade is {stats.Low:N1}");
             Console.WriteLine($"The total grade is {stats.Total:N2}");
             Console.WriteLine($"The average grade is {stats.Average:N2}");
+            Console.WriteLine($"The average grade is {stats.Letter}");
+
         }
     }
 }

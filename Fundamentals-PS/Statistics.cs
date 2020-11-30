@@ -8,5 +8,6 @@ namespace Fundamentals_PS
         public double Total;
         public double High;
         public double Low;
+        public char Letter;
     }
 }

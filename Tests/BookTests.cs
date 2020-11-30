@@ -18,7 +18,9 @@ namespace Fundamentals_PS.Tests
 
             // assert
             Assert.Equal(90.0, result.Average, 1);
-
+            Assert.Equal(80, result.Low);
+            Assert.Equal(100, result.High);
+            Assert.Equal('A', result.Letter);
         }
     }
 }

@@ -59,10 +59,35 @@ namespace Fundamentals_PS
                 result.High = Math.Max(grade, result.High);
                 result.Low = Math.Min(grade, result.Low);
                 result.Total += grade;
-                result.Average = result.Total / grades.Count;
             }
 
+            result.Average = result.Total / grades.Count;
+
+            switch(result.Average)
+            {
+                case var mark when mark >= 90.0:
+                    result.Letter = 'A';
+                    break;
+
+                case var mark when mark >= 80.0:
+                    result.Letter = 'B';
+                    break;
+
+                case var mark when mark >= 70.0:
+                    result.Letter = 'C';
+                    break;
+
+                case var mark when mark >= 60.0:
+                    result.Letter = 'D';
+                    break;
+
+                default:
+                    result.Letter = 'F';
+                    break;
+            }
             return result;
+
+
         }
 
         static private List<double> grades;
