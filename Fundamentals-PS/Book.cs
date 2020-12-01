@@ -3,7 +3,18 @@ using System.Collections.Generic;
 
 namespace Fundamentals_PS
 {
-    public class Book
+    //public delegate void GradeAddedDelegate(object sender, EventArgs args);
+
+    public class NamedObject
+    {
+        public string Name
+        {
+            get;
+            set;
+        }
+    }
+
+    public class Book : NamedObject
     {
         public Book(string name)
         {
@@ -91,6 +102,7 @@ namespace Fundamentals_PS
         }
 
         static private List<double> grades;
-        public string Name;
+
+        //public const string CATEGORY = "Science";
     }
 }

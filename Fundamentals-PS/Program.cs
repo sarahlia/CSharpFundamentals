@@ -8,6 +8,7 @@ namespace Fundamentals_PS
         static void Main(string[] args)
         {
             var book = new Book("Sarah's Grade Book");
+            Console.WriteLine(book.Name);
                     
             while(true)
             {
