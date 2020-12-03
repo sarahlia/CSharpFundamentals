@@ -9,13 +9,25 @@ namespace Fundamentals_PS
         {
             var book = new Book("Sarah's Grade Book");
             Console.WriteLine(book.Name);
-                    
-            while(true)
+
+            EnterGrades(book);
+
+            var stats = book.GetStatistics();
+
+            Console.WriteLine($"The highest grade is {stats.High:N1}");
+            Console.WriteLine($"The lowest grade is {stats.Low:N1}");
+            Console.WriteLine($"The average grade is {stats.Average:N2}");
+            Console.WriteLine($"Your letter grade is {stats.Letter}");
+        }
+
+        private static void EnterGrades(Book book)
+        {
+            while (true)
             {
                 Console.WriteLine("Enter a grade or 'q' to quit:");
                 var input = Console.ReadLine();
 
-                if(input == "q")
+                if (input == "q")
                 {
                     break;
                 }
@@ -25,11 +37,11 @@ namespace Fundamentals_PS
                     var grade = double.Parse(input);
                     book.AddGrade(grade);
                 }
-                catch(ArgumentException ex)
+                catch (ArgumentException ex)
                 {
                     Console.WriteLine(ex.Message);
                 }
-                catch(FormatException ex)
+                catch (FormatException ex)
                 {
                     Console.WriteLine(ex.Message);
                 }
@@ -38,15 +50,8 @@ namespace Fundamentals_PS
                     Console.WriteLine("**");
                 }
 
-                
+
             }
-
-            var stats = book.GetStatistics();
-
-            Console.WriteLine($"The highest grade is {stats.High:N1}");
-            Console.WriteLine($"The lowest grade is {stats.Low:N1}");
-            Console.WriteLine($"The average grade is {stats.Average:N2}");
-            Console.WriteLine($"Your letter grade is {stats.Letter}");
         }
     }
 }
