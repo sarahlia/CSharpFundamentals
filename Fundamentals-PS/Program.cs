@@ -7,7 +7,7 @@ namespace Fundamentals_PS
     {
         static void Main(string[] args)
         {
-            var book = new Book("Sarah's Grade Book");
+            var book = new InMemoryBook("Sarah's Grade Book");
             Console.WriteLine(book.Name);
 
             EnterGrades(book);
@@ -20,7 +20,7 @@ namespace Fundamentals_PS
             Console.WriteLine($"Your letter grade is {stats.Letter}");
         }
 
-        private static void EnterGrades(Book book)
+        private static void EnterGrades(IBook book)
         {
             while (true)
             {

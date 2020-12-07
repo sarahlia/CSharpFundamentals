@@ -9,7 +9,7 @@ namespace Fundamentals_PS.Tests
         public void BookCalculatesAnAverageGrade()
         {
             // arrange
-            var book = new Book("scores");
+            var book = new InMemoryBook("scores");
             book.AddGrade(80);
             book.AddGrade(100);
 
