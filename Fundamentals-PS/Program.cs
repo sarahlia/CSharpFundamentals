@@ -7,7 +7,7 @@ namespace Fundamentals_PS
     {
         static void Main(string[] args)
         {
-            var book = new InMemoryBook("Sarah's Grade Book");
+            IBook book = new DiskBook("Sarah's Grade Book");
             Console.WriteLine(book.Name);
 
             EnterGrades(book);
