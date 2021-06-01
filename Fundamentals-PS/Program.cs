@@ -7,6 +7,9 @@ namespace Fundamentals_PS
     {
         static void Main(string[] args)
         {
+            DiskBook diskBook = new DiskBook("sa");
+            diskBook.btnStart_Click();
+            
             if (args.Length > 0)
             {
                 Console.WriteLine($"Hello {args[0]}!");

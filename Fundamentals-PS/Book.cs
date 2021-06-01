@@ -43,6 +43,23 @@ namespace Fundamentals_PS
 
     public class DiskBook : Book
     {
+        string result;
+
+        public async void btnStart_Click()
+        {
+            await SaySomething(); //if the 'await' is OMITTED, the output would be an empty line. Otherwise if it's as written here, "Hello world" will appear after 1000 ms.
+            string txtSomeTextBlock;
+            txtSomeTextBlock = result;
+            Console.WriteLine(txtSomeTextBlock);
+        }
+
+        async System.Threading.Tasks.Task<string> SaySomething()
+        {
+            await System.Threading.Tasks.Task.Delay(1000); 
+
+            result = "Hello world!";
+            return result;
+        }
         public DiskBook(string name) : base(name)
         {
         }
@@ -81,6 +98,8 @@ namespace Fundamentals_PS
             return result;
         }
     }
+    
+    
 
     public class InMemoryBook : Book
     {
