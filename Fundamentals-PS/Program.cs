@@ -7,15 +7,51 @@ namespace Fundamentals_PS
     {
         static void Main(string[] args)
         {
+            // DiskBook diskBook = new DiskBook("sa");
+            // diskBook.btnStart_Click();
+            
+            if (args.Length > 0)
+            {
+                Console.WriteLine($"Hello {args[0]}!");
+            }
+            Console.WriteLine("Hello.");
+            
+            // var numbers = new[] { 12.7, 10.3, 6.11, 4.1 };
+            //
+            // var total = 0.0;
+            // foreach (var number in numbers)
+            // {
+            //     total += number;
+            // }
+            // Console.WriteLine($"The total is {total}");
+
+            // var grades = new List<double>
+            // {
+            //     12.7,
+            //     10.3,
+            //     6.11,
+            //     4.1,
+            //     56.1
+            // };
+            //
+            // var result = 0.0;
+            // foreach (var grade in grades)
+            // {
+            //     result += grade;
+            // }
+            // result /= grades.Count;
+            // Console.WriteLine($"The average is {result:N3}");
+            
             // IBook book = new DiskBook("Sarah's Grade Book");
             // Console.WriteLine(book.Name);
-
+            
             Book book = new InMemoryBook("Sample Book");
+
             EnterGrades(book);
-            
+
             var stats = book.GetStatistics();
-            book.Name = "some book";
-            
+            book.Name = "November Book";
+
             Console.WriteLine($"For the book named {book.Name}");
             Console.WriteLine($"The highest grade is {stats.High:N1}");
             Console.WriteLine($"The lowest grade is {stats.Low:N1}");
