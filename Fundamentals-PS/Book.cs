@@ -142,6 +142,23 @@ namespace Fundamentals_PS
 
         static private List<double> grades;
 
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                if(!String.IsNullOrEmpty(value))
+                {
+                    name = value; 
+                }
+            }
+        }
+        
+        private string name;
+
         //public const string CATEGORY = "Science";
     }
 }

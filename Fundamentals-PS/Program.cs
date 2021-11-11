@@ -7,13 +7,16 @@ namespace Fundamentals_PS
     {
         static void Main(string[] args)
         {
-            IBook book = new DiskBook("Sarah's Grade Book");
-            Console.WriteLine(book.Name);
+            // IBook book = new DiskBook("Sarah's Grade Book");
+            // Console.WriteLine(book.Name);
 
+            Book book = new InMemoryBook("Sample Book");
             EnterGrades(book);
-
+            
             var stats = book.GetStatistics();
-
+            book.Name = "some book";
+            
+            Console.WriteLine($"For the book named {book.Name}");
             Console.WriteLine($"The highest grade is {stats.High:N1}");
             Console.WriteLine($"The lowest grade is {stats.Low:N1}");
             Console.WriteLine($"The average grade is {stats.Average:N2}");
@@ -50,7 +53,6 @@ namespace Fundamentals_PS
                 {
                     Console.WriteLine("**");
                 }
-
 
             }
         }
