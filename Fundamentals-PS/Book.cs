@@ -89,8 +89,9 @@ namespace Fundamentals_PS
             grades = new List<double>();
             Name = name;
         }
-
-        public void AddLetterGrade(char letter)
+        
+        // overloading
+        public void AddGrade(char letter)
         {
             switch(letter)
             {
@@ -111,7 +112,7 @@ namespace Fundamentals_PS
                     break;
             }
         }
-
+        
         public override void AddGrade(double grade)
         {
             if(grade <= 100 && grade >= 0)
