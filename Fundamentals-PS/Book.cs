@@ -164,7 +164,7 @@ namespace Fundamentals_PS
         public string Name
         {
             get;
-            private set;
+            set;
         }
 
         public const string CATEGORY = "Science";

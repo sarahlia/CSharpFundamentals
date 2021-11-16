@@ -3,8 +3,28 @@ using Xunit;
 
 namespace Fundamentals_PS.Tests
 {
+
+    public delegate string WriteLogDelegate(string logMessage);
+    
     public class TypeTests
     {
+        [Fact]
+        public void WriteLogDelegateCanPointToMethod()
+        {
+            WriteLogDelegate log;
+
+            log = ReturnMessage;
+
+            var result = log("Testing!");
+            Assert.Equal("Testing!", result);
+        }
+
+        string ReturnMessage(string message)
+        {
+            return message;
+        }
+        
+        
         [Fact]
         public void ValueTypesAlsoPassByValue()
         {
