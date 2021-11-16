@@ -107,6 +107,7 @@ namespace Fundamentals_PS
         {
             grades = new List<double>();
             Name = name;
+            category = "";
         }
         
         // overloading
@@ -166,7 +167,7 @@ namespace Fundamentals_PS
             get;
             private set;
         }
-        
-        //public const string CATEGORY = "Science";
+
+        readonly string category = "Science";
     }
 }
