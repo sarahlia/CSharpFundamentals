@@ -8,23 +8,31 @@ namespace Fundamentals_PS.Tests
     
     public class TypeTests
     {
+        int count = 0;
+        
         [Fact]
         public void WriteLogDelegateCanPointToMethod()
         {
-            WriteLogDelegate log;
-
-            log = ReturnMessage;
+            WriteLogDelegate log = ReturnMessage;
+            log += ReturnMessage;
+            log += IncrementCount;
 
             var result = log("Testing!");
-            Assert.Equal("Testing!", result);
+            Assert.Equal(3, count);
         }
 
-        string ReturnMessage(string message)
+        string IncrementCount(string message)
         {
-            return message;
+            count++;
+            return message.ToLower();
         }
         
-        
+        string ReturnMessage(string message)
+        {
+            count++;
+            return message;
+        }
+
         [Fact]
         public void ValueTypesAlsoPassByValue()
         {
